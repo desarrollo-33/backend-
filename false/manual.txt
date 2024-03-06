@@ -1,0 +1,94 @@
+Ruta para obtener información de usuarios:
+
+javascript
+
+app.get('/usuarios', async (req, res) => {
+    try {
+        // Llama a la API de JSONPlaceholder para obtener usuarios
+        const respuesta = await axios.get('https://jsonplaceholder.typicode.com/users');
+
+        // Envía la respuesta con los datos de usuarios obtenidos de la API
+        res.json(respuesta.data);
+    } catch (error) {
+        // Manejo de errores: Imprime el error en la consola y responde con un mensaje de error
+        console.error('Error al obtener información de usuarios:', error.message);
+        res.status(500).json({ mensaje: 'Error al obtener información de usuarios' });
+    }
+});
+
+    Esta ruta define un endpoint (/usuarios) que maneja solicitudes HTTP GET.
+    Utiliza axios para hacer una solicitud GET a la API JSONPlaceholder que proporciona datos de usuarios.
+    Si la solicitud es exitosa, responde con los datos de usuarios obtenidos de la API.
+    Si hay un error durante la solicitud, imprime el error en la consola y responde con un mensaje de error y un código de estado 500 (Error del servidor).
+
+Inicio del servidor:
+
+javascript
+
+    app.listen(puerto, () => {
+        console.log(`Servidor escuchando en http://localhost:${puerto}`);
+    });
+
+        La aplicación inicia el servidor y comienza a escuchar en el puerto especificado.
+        Imprime un mensaje en la consola indicando la dirección y el puerto en los que el servidor está escuchando.
+
+En resumen, este código muestra cómo crear un servidor web con 
+Express para proporcionar información de usuarios obtenida de una 
+API externa (JSONPlaceholder) a través de una solicitud HTTP GET. 
+Además, incluye manejo de errores para garantizar la robustez de 
+la aplicación.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

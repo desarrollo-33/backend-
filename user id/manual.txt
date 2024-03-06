@@ -1,0 +1,98 @@
+Obtener Todos los Usuarios
+
+javascript
+
+app.get('/usuarios', (req, res) => {
+  res.json(usuarios);
+});
+
+    Ruta GET que devuelve todos los usuarios almacenados.
+
+2. Obtener Usuario por ID
+
+javascript
+
+app.get('/usuarios/:id', (req, res) => {
+  const id = req.params.id;
+  const usuario = usuarios.find(u => u.id === id);
+
+  if (!usuario) {
+    return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+  }
+
+  res.json(usuario);
+});
+
+    Ruta GET que recibe un ID como parámetro y devuelve el usuario correspondiente.
+    Si el usuario no existe, se devuelve un mensaje de error 404.
+
+3. Agregar Nuevo Usuario
+
+javascript
+
+app.post('/usuarios', (req, res) => {
+  const nuevoUsuario = req.body;
+  usuarios.push(nuevoUsuario);
+
+  res.status(201).json({ mensaje: 'Usuario creado exitosamente', usuario: nuevoUsuario });
+});
+
+    Ruta POST que recibe un nuevo usuario en el cuerpo de la solicitud y lo agrega al array de usuarios.
+    Se devuelve un mensaje de éxito y el usuario creado.
+
+4. Actualizar Usuario por ID
+
+javascript
+
+app.put('/usuarios/:id', (req, res) => {
+  const id = req.params.id;
+  const usuarioIndex = usuarios.findIndex(u => u.id === id);
+
+  if (usuarioIndex === -1) {
+    return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+  }
+
+  const nuevoDatosUsuario = req.body;
+  usuarios[usuarioIndex] = { ...usuarios[usuarioIndex], ...nuevoDatosUsuario };
+
+  res.json({ mensaje: 'Usuario actualizado exitosamente', usuario: usuarios[usuarioIndex] });
+});
+
+    Ruta PUT que recibe un ID y nuevos datos en el cuerpo de la solicitud para actualizar un usuario existente.
+    Si el usuario no existe, se devuelve un mensaje de error 404.
+    Se devuelve un mensaje de éxito y el usuario actualizado.
+
+5. Eliminar Usuario por ID
+
+javascript
+
+app.delete('/usuarios/:id', (req, res) => {
+  const id = req.params.id;
+  const usuarioIndex = usuarios.findIndex(u => u.id === id);
+
+  if (usuarioIndex === -1) {
+    return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+  }
+
+  const usuarioEliminado = usuarios.splice(usuarioIndex, 1);
+
+  res.json({ mensaje: 'Usuario eliminado exitosamente', usuario: usuarioEliminado[0] });
+});
+
+    Ruta DELETE que recibe un ID y elimina el usuario correspondiente.
+    Si el usuario no existe, se devuelve un mensaje de error 404.
+    Se devuelve un mensaje de éxito y el usuario eliminado.
+
+Iniciar el Servidor
+
+javascript
+
+app.listen(puerto, () => {
+  console.log(`Servidor escuchando en http://localhost:${puerto}`);
+});
+
+    Se inicia el servidor y se muestra un mensaje en la consola indicando la URL de acceso.
+
+Conclusiones
+
+Este código sirve como base para construir una API RESTful que gestiona usuarios. En un entorno de producción real, se debería utilizar una base de datos persistente en lugar de almacenar datos en memoria.

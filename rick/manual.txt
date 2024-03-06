@@ -1,0 +1,168 @@
+    Importación de módulos:
+        express: Importa el módulo Express para crear la aplicación web.
+        axios: Importa el módulo axios para realizar solicitudes HTTP.
+
+    Definición de la aplicación Express y el puerto:
+        Crea una instancia de la aplicación Express mediante const app = express();.
+        Define el número de puerto en el que la aplicación estará escuchando (puerto).
+
+    Función asíncrona obtenerInformacion:
+        Define una función asíncrona llamada obtenerInformacion que realizará solicitudes HTTP para obtener información de la API de Rick and Morty y luego iniciará el servidor Express.
+
+    Solicitudes HTTP con axios:
+        Utiliza el módulo axios para realizar dos solicitudes HTTP a la API de Rick and Morty:
+            Obtiene información del personaje con ID 1.
+            Obtiene la lista de personajes y selecciona los primeros tres.
+
+    Manejo de errores:
+        En el bloque try-catch, maneja cualquier error que pueda ocurrir durante las solicitudes HTTP. Imprime un mensaje de error en la consola en caso de error.
+
+    Iniciar el servidor Express:
+        Después de completar las solicitudes HTTP, la función inicia el servidor Express y lo hace escuchar en el puerto especificado (puerto).
+
+    Llamada a obtenerInformacion y inicio del servidor:
+        Llama a la función obtenerInformacion para ejecutar las solicitudes HTTP y luego iniciar el servidor.
+
+En resumen, este código utiliza Express y axios para realizar 
+solicitudes HTTP a la API de Rick and Morty, obteniendo 
+información de un personaje específico y una lista de personajes. 
+Después de completar estas solicitudes, inicia un servidor Express.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

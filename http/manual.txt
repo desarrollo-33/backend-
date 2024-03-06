@@ -1,0 +1,80 @@
+    mportar el módulo HTTP:
+        const http = require('http');: Importa el módulo HTTP de Node.js, que proporciona funcionalidades para crear servidores web.
+
+    Configurar el servidor HTTP:
+        const server = http.createServer((req, res) => {...});: Crea un servidor HTTP utilizando el método createServer. Toma una función de devolución de llamada que se ejecuta cada vez que se recibe una solicitud. Esta función tiene dos parámetros, req (la solicitud HTTP) y res (la respuesta HTTP).
+
+    Configurar la cabecera y enviar respuesta:
+        res.writeHead(200, {'Content-Type': 'text/plain'});: Configura la cabecera de la respuesta con el código de estado 200 (OK) y el tipo de contenido como texto plano.
+        res.end('¡Hola, mundo!\n');: Envía el mensaje "¡Hola, mundo!" como contenido de la respuesta HTTP y finaliza la respuesta.
+
+    Definir el puerto y la dirección:
+        const PORT = 3000;: Define el puerto en el que el servidor escuchará las solicitudes.
+        const HOST = 'localhost';: Define la dirección en la que el servidor estará disponible.
+
+    Iniciar el servidor y escuchar:
+        server.listen(PORT, HOST, () => {...});: Inicia el servidor y escucha en el puerto y la dirección especificados. La función de devolución de llamada se ejecuta una vez que el servidor está escuchando y muestra un mensaje en la consola indicando la dirección y el puerto del servidor.
+
+Este código crea un servidor web simple que responde con 
+"¡Hola, mundo!" cuando se accede a través de un navegador o 
+una herramienta como curl.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

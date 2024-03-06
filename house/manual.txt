@@ -1,0 +1,10 @@
+Este código utiliza Express para crear una aplicación web simple 
+que actúa como una API REST para gestionar usuarios. Las rutas 
+definidas manejan operaciones CRUD (Crear, Leer, Actualizar, Eliminar)
+en una lista de usuarios almacenados en memoria 
+(como si fuera una base de datos simulada). 
+El middleware body-parser se utiliza para analizar datos 
+en formato JSON del cuerpo de las solicitudes HTTP. 
+Cada ruta maneja diferentes métodos HTTP 
+(GET, POST, PUT, DELETE) para 
+realizar operaciones específicas en los usuarios.

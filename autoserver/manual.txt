@@ -1,0 +1,138 @@
+    Ruta de login (POST /login):
+        Permite a un usuario autenticarse proporcionando un nombre de usuario y contraseña.
+        Si las credenciales son correctas, se genera un token JWT utilizando la función jwt.sign y se devuelve al cliente.
+
+    Middleware para verificar el token (verificarToken):
+        Se utiliza como middleware en la ruta protegida (GET /contenido-protegido).
+        Extrae el token del encabezado 'Authorization' de la solicitud.
+        Verifica el token utilizando la clave secreta y decodifica la información del usuario.
+        Almacena la información del usuario decodificada en el objeto de solicitud (req.usuario).
+        Si el token es válido, permite que la solicitud continúe hacia la siguiente middleware o ruta; de lo contrario, responde con un código de estado 401.
+
+    Ruta protegida (GET /contenido-protegido):
+        Requiere que el cliente proporcione un token válido mediante el uso del middleware verificarToken.
+        Responde con un mensaje de éxito y la información del usuario obtenida del token.
+
+Este código proporciona una implementación básica de autenticación utilizando tokens JWT en una aplicación Express. Es importante destacar que en un entorno de producción, se deben implementar prácticas de seguridad más robustas y se deben considerar aspectos como el almacenamiento seguro de claves secretas y la gestión adecuada de tokens.
+User
+bien ahora como lo probamos en postman ?
+ChatGPT
+
+Para probar el código en Postman, puedes seguir estos pasos:
+
+    Iniciar el servidor:
+        Asegúrate de que el servidor esté en ejecución. Si no lo has hecho, ejecuta el script que contiene el código en tu terminal para iniciar el servidor.
+
+    Abrir Postman:
+        Abre la aplicación Postman.
+
+    Enviar una solicitud de inicio de sesión (POST /login):
+        Crea una nueva solicitud en Postman y configúrala para hacer una solicitud POST a la siguiente URL: http://localhost:3000/login.
+        Selecciona el tipo de cuerpo como raw y elige JSON (application/json) como formato.
+        En el cuerpo de la solicitud, proporciona las credenciales de prueba, por ejemplo:
+
+        json
+
+        {
+          "usuario": "usuario1",
+          "contraseña": "contraseña123"
+        }
+
+        Haz clic en el botón "Enviar".
+
+    Obtener el token de la respuesta:
+        Si las credenciales son correctas, la respuesta debería contener un token. Copia este token, ya que lo necesitarás para realizar solicitudes a rutas protegidas.
+
+    Enviar una solicitud a la ruta protegida (GET /contenido-protegido):
+        Crea una nueva solicitud en Postman y configúrala para hacer una solicitud GET a la siguiente URL: http://localhost:3000/contenido-protegido.
+        En la pestaña "Headers", agrega un encabezado con la clave Authorization y el valor Bearer <token>, donde <token> es el token que copiaste anteriormente.
+        Haz clic en el botón "Enviar".
+
+    Verificar la respuesta:
+        Si el token es válido, la respuesta debería contener el mensaje "Contenido protegido" y la información del usuario.
+        Si el token no es válido o no se proporciona, la respuesta mostrará un mensaje de error.
+
+Estos pasos te permitirán probar la autenticación con tokens JWT 
+en el servidor Express utilizando Postman. Recuerda que este es 
+un ejemplo básico y en un entorno de producción, debes implementar 
+medidas de seguridad adicionales y manejar adecuadamente las claves 
+secretas y los tokens.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,127 @@
+    mportación de módulos:
+        Se importan los módulos express, axios, fs y path necesarios para la aplicación.
+
+    Instancia de la aplicación Express:
+        Se crea una instancia de la aplicación Express mediante const app = express();.
+
+    Definición de variables:
+        puerto: Define el número de puerto en el que la aplicación estará escuchando.
+        rutaImagenDescargada: Define la ruta completa donde se guardará la imagen descargada en el servidor.
+        urlImagen: URL de la imagen que se va a descargar.
+
+    Definición del endpoint /descargar-imagen:
+        Cuando se realiza una solicitud GET a esta ruta, el código descarga la imagen de la URL especificada y la envía como respuesta al cliente.
+        Utiliza el módulo axios para realizar la solicitud HTTP a la URL de la imagen.
+        Configura el tipo de respuesta como una secuencia de datos (stream) para manejar grandes archivos de manera eficiente.
+        Guarda la imagen en el servidor escribiendo la secuencia de datos en un archivo utilizando el módulo fs.
+        Envía la imagen como respuesta al cliente mediante res.
+
+    Manejo de errores:
+        Si ocurre algún error durante el proceso, se imprime un mensaje en la consola y se envía una respuesta de error al cliente con un código de estado 500.
+
+    Inicio del servidor:
+        El servidor se inicia y escucha en el puerto especificado.
+
+Este código crea un servidor Express que descarga una imagen desde 
+una URL y la devuelve como respuesta a una solicitud 
+en la ruta /descargar-imagen. Además, guarda la imagen en 
+el servidor en un archivo llamado imagen_descargada.jpg.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
